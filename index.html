@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f0e1">
+<title>The Sacred Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Ovo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="locked">
+
+<!-- ===== Envelope cover (art injected by script.js) ===== -->
+<div id="envelope" role="button" tabindex="0" aria-label="Tap to open invitation">
+  <div class="panel left"></div>
+  <div class="panel right"></div>
+  <div class="panel bottom"></div>
+  <div class="liner"></div>
+  <div class="art body-art" data-art="body"></div>
+  <div class="sheen-wrap body"><div class="sheen"><div class="lit" data-art="body"></div></div></div>
+  <div class="glints" data-glints="body"></div>
+  <div class="burst"><i class="core"></i><i class="rays"></i><i class="rays2"></i></div>
+  <div class="flapshadow"><i></i></div>
+  <div class="flapwrap">
+    <div class="flap">
+      <div class="art" data-art="flap"></div>
+      <div class="sheen-wrap flapw"><div class="sheen"><div class="lit" data-art="flap"></div></div></div>
+      <div class="glints" data-glints="flap"></div>
+    </div>
+    <div class="seal" data-art="seal"></div>
+  </div>
+  <div class="tap"><span class="chev"></span><span>TAP TO OPEN</span></div>
+</div>
+
+<button id="sound" class="sound" aria-label="Toggle music" hidden>
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+    <path class="waves" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/>
+    <path class="mute" d="M16 9l5 6M21 9l-5 6"/>
+  </svg>
+</button>
+<audio id="bgm" src="assets/music.mp3" loop preload="auto"></audio>
+
+<main class="page">
+  <div class="toran" data-art="toran"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg-mandala" data-art="mandalaBig"></div>
+    <div class="vine v-l" data-art="vine"></div>
+    <div class="vine v-r" data-art="vine"></div>
+    <p class="shloka serif reveal">~ Shree Ganeshaya Namah ~</p>
+    <div class="archbox reveal">
+      <div class="arch" data-art="arch"></div>
+      <div class="arch-in">
+        <h1 class="script" id="groom">Zohan</h1>
+        <span class="amp">&amp;</span>
+        <h1 class="script" id="bride">Rose</h1>
+        <p class="caps">Wedding Day</p>
+        <p class="date" id="dateText">27.09.26</p>
+      </div>
+    </div>
+    <div class="divider reveal d1" data-art="divider"></div>
+    <h2 class="serif two reveal d2">Two Souls<br>One destiny</h2>
+    <p class="body reveal d2">A lifetime blessed by the divine</p>
+    <div class="invite reveal d3">
+      <h3 class="serif">Dear Friends and Family</h3>
+      <p class="body">Join us for an evening of love, laughter, blessings, and unforgettable memories as we begin our forever.</p>
+    </div>
+    <div class="scrolldown reveal d4"><span class="serif">Scroll down</span><span class="chev dark"></span></div>
+  </section>
+
+  <!-- Countdown -->
+  <section class="block count">
+    <div class="divider reveal" data-art="divider"></div>
+    <h2 class="serif title reveal">The Celebration Begins In</h2>
+    <div class="timer reveal d1" id="timer">
+      <div><b id="cd-d">00</b><small>Days</small></div><i>:</i>
+      <div><b id="cd-h">00</b><small>Hours</small></div><i>:</i>
+      <div><b id="cd-m">00</b><small>Minutes</small></div><i>:</i>
+      <div><b id="cd-s">00</b><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section class="block schedule">
+    <div class="divider reveal" data-art="divider"></div>
+    <h2 class="serif title reveal">Schedule of Events</h2>
+    <ul class="timeline" id="timeline"></ul>
+  </section>
+
+  <!-- Location -->
+  <section class="block card-sec">
+    <h2 class="serif title reveal">Location</h2>
+    <div class="card reveal d1">
+      <div class="lotus" data-art="lotus"></div>
+      <h3 class="serif" id="venue">Venue Name (edit me)</h3>
+      <p class="body sm" id="address">Address: 123 Wedding Lane, City, State 00000</p>
+      <a class="btn" id="mapBtn" target="_blank" rel="noopener">View on Map</a>
+    </div>
+  </section>
+
+  <section class="block card-sec">
+    <h2 class="serif title reveal">Gift Preference</h2>
+    <div class="card reveal d1"><div class="lotus" data-art="lotus"></div><p class="body" id="gift">Kindly, no boxed gifts please.</p></div>
+  </section>
+
+  <section class="block card-sec">
+    <h2 class="serif title reveal">Dress Code</h2>
+    <div class="card reveal d1"><div class="lotus" data-art="lotus"></div><p class="body" id="dress">Traditional Indian attire is warmly encouraged. We kindly ask guests to avoid all-white and black outfits.</p></div>
+  </section>
+
+  <section class="block rsvp">
+    <div class="divider reveal" data-art="divider"></div>
+    <h2 class="serif title reveal">Confirm Your Attendance</h2>
+    <p class="body reveal d1">To help us prepare for a joyful celebration, kindly confirm your attendance.</p>
+    <button class="btn reveal d2" id="rsvpOpen">Click to open</button>
+  </section>
+
+  <section class="block footer">
+    <div class="bg-mandala" data-art="mandalaBig"></div>
+    <div class="vine v-l" data-art="vine"></div>
+    <div class="vine v-r" data-art="vine"></div>
+    <div class="seal reveal" data-art="seal"></div>
+    <h2 class="serif title reveal d1">Hope to see you there!</h2>
+    <p class="script sign reveal d2">Zohan and Rose</p>
+  </section>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mt">
+    <button class="close" id="rsvpClose" aria-label="Close">&times;</button>
+    <h3 class="serif" id="mt">Confirm Your Attendance</h3>
+    <form id="rsvpForm">
+      <label>Full name<input required name="name" autocomplete="name"></label>
+      <label>Number of guests<select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label>
+      <div class="choice">
+        <label><input type="radio" name="att" value="yes" checked><span>Joyfully accept</span></label>
+        <label><input type="radio" name="att" value="no"><span>Regretfully decline</span></label>
+      </div>
+      <label>Message (optional)<textarea name="msg" rows="2"></textarea></label>
+      <button class="btn" type="submit">Send RSVP</button>
+      <p class="thanks" id="thanks" hidden>Thank you! Your response has been noted.</p>
+    </form>
+  </div>
+</div>
+
+<script src="art.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
