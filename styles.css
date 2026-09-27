@@ -180,15 +180,14 @@ body:not(.revealed) .page{transform:scale(1.03);opacity:.01}
 .rsvp .body{font-size:17px;max-width:290px;margin:0 auto}
 
 /* footer */
-.footer{position:relative;padding:64px 28px 60px;overflow:hidden}
-.footer .seal{width:100px;height:100px;margin:0 auto 28px;position:relative;filter:drop-shadow(0 6px 5px rgba(40,4,10,.4))}
+.footer{position:relative;padding:64px 20px 60px;overflow:hidden}
 .footer .vine{top:40px}
-.footer-row{position:relative;z-index:2;display:flex;align-items:center;gap:10px}
-.footer-text{flex:1;min-width:0;text-align:right}
-.footer-text .title{font-size:21px;margin-bottom:8px;line-height:1.3}
-.sign{font-size:29px;color:var(--gold);margin-top:0;position:relative;line-height:1.15}
+.footer-row{position:relative;z-index:2;display:flex;align-items:center;gap:8px;margin-top:10px}
+.footer-text{flex:1;min-width:0;text-align:center}
+.footer-text .title{font-size:19px;margin-bottom:8px;line-height:1.3}
+.sign{font-size:26px;color:var(--gold);margin-top:0;position:relative;line-height:1.15}
 .footer .title{position:relative}
-.couple-photo{flex:none;width:44%;max-width:170px;display:block;margin:0 -44px 0 0;
+.couple-photo{flex:none;width:70%;max-width:272px;display:block;margin:0 -36px 0 0;
   filter:drop-shadow(0 14px 18px rgba(70,45,15,.35))}
 
 /* modal */
