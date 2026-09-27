@@ -2,7 +2,7 @@
 const CONFIG = {
   groom: "Sagar",
   bride: "Shweta",
-  dateText: "27 & 29.11.26",
+  dateText: "29.11.26",
   // Event start (local time of venue): year, month(1-12), day, hour, minute
   eventDate: new Date(2026, 10, 29, 17, 0, 0),
   venue: "Mahalaxmi Garden",
