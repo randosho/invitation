@@ -128,6 +128,13 @@
     <h3 class="serif" id="mt">Confirm Your Attendance</h3>
     <form id="rsvpForm">
       <label>Full name<input required name="name" autocomplete="name"></label>
+      <label>Which side are you celebrating with?
+        <select name="side" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="bride">Shweta's Side</option>
+          <option value="groom">Sagar's Side</option>
+        </select>
+      </label>
       <label>Number of guests<select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label>
       <div class="choice">
         <label><input type="radio" name="att" value="yes" checked><span>Joyfully accept</span></label>
@@ -135,7 +142,7 @@
       </div>
       <label>Message (optional)<textarea name="msg" rows="2"></textarea></label>
       <button class="btn" type="submit">Send RSVP</button>
-      <p class="thanks" id="thanks" hidden>Thank you! Your response has been noted.</p>
+      <p class="thanks" id="thanks" hidden>Thank you! Opening WhatsApp to send your RSVP...</p>
     </form>
   </div>
 </div>

@@ -11,6 +11,11 @@ const CONFIG = {
     ["27 Nov", "Haldi"],
     ["29 Nov", "Shadi"],
   ],
+  // TODO: replace with real WhatsApp numbers — country code + number, no "+", spaces, or leading 0
+  rsvpNumbers: {
+    bride: "911111111111",
+    groom: "912222222222",
+  },
 };
 
 const $ = (id) => document.getElementById(id);
@@ -190,7 +195,18 @@ $("rsvpClose").addEventListener("click", () => { modal.hidden = true; });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.hidden = true; });
 $("rsvpForm").addEventListener("submit", (e) => {
   e.preventDefault();
-  // TODO: send e.g. new FormData(e.target) to WhatsApp / Formspree / Google Form
+  const data = new FormData(e.target);
+  const number = CONFIG.rsvpNumbers[data.get("side")];
+  const attending = data.get("att") === "yes" ? "Joyfully accepts" : "Regretfully declines";
+  const lines = [
+    `RSVP for ${CONFIG.bride} & ${CONFIG.groom}'s Wedding`,
+    `Name: ${data.get("name")}`,
+    `Guests: ${data.get("guests")}`,
+    `Attendance: ${attending}`,
+  ];
+  const msg = data.get("msg");
+  if (msg) lines.push(`Message: ${msg}`);
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
   $("thanks").hidden = false;
   setTimeout(() => { modal.hidden = true; $("thanks").hidden = true; e.target.reset(); }, 1800);
 });
