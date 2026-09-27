@@ -141,7 +141,7 @@ const ART = (() => {
     <circle cx="100" cy="100" r="66" fill="none" stroke="#3d0410" stroke-opacity=".55" stroke-width="3"/>
     <circle cx="100" cy="100" r="63" fill="none" stroke="#d5586a" stroke-opacity=".4" stroke-width="1.3"/>
     <circle cx="100" cy="100" r="57" fill="none" stroke="url(#gold)" stroke-width="1.4" stroke-dasharray="1 4" stroke-linecap="round"/>
-    <text x="100" y="118" text-anchor="middle" font-family="Great Vibes, cursive" font-size="52" fill="#e6c977">R&amp;Z</text>`;
+    <text x="100" y="118" text-anchor="middle" font-family="Great Vibes, cursive" font-size="52" fill="#e6c977">S&amp;S</text>`;
   };
 
   /* ---------- page ornaments (coloured, not embossed) ---------- */

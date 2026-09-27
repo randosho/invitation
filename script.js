@@ -1,21 +1,15 @@
 /* ===== Edit your details here ===== */
 const CONFIG = {
-  groom: "Zohan",
-  bride: "Rose",
-  dateText: "27.09.26",
+  groom: "Sagar",
+  bride: "Shweta",
+  dateText: "27 & 29.11.26",
   // Event start (local time of venue): year, month(1-12), day, hour, minute
-  eventDate: new Date(2026, 8, 27, 17, 0, 0),
-  venue: "Venue Name (edit me)",
-  address: "Address: 123 Wedding Lane, City, State 00000",
-  mapQuery: "Venue Name, 123 Wedding Lane, City, State 00000",
-  gift: "Kindly, no boxed gifts please.",
-  dress: "Traditional Indian attire is warmly encouraged. We kindly ask guests to avoid all-white and black outfits.",
+  eventDate: new Date(2026, 10, 29, 17, 0, 0),
+  venue: "Mahalaxmi Garden",
+  mapUrl: "https://maps.app.goo.gl/SEPe8payrhcvdNSR8?g_st=aw",
   schedule: [
-    ["5 PM", "Guest Arrival"],
-    ["6 PM", "Baraat Welcome"],
-    ["7 PM", "Pheras & Vivah"],
-    ["8 PM", "Dinner"],
-    ["9 PM", "Dance"],
+    ["27 Nov", "Haldi"],
+    ["29 Nov", "Shadi"],
   ],
 };
 
@@ -26,10 +20,7 @@ $("groom").textContent = CONFIG.groom;
 $("bride").textContent = CONFIG.bride;
 $("dateText").textContent = CONFIG.dateText;
 $("venue").textContent = CONFIG.venue;
-$("address").textContent = CONFIG.address;
-$("gift").textContent = CONFIG.gift;
-$("dress").textContent = CONFIG.dress;
-$("mapBtn").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.mapQuery);
+$("mapBtn").href = CONFIG.mapUrl;
 $("timeline").innerHTML = CONFIG.schedule
   .map(([t, e]) => `<li class="reveal"><span class="time">${t}</span><span class="ev">${e}</span></li>`)
   .join("");
