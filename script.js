@@ -189,7 +189,7 @@ function openEnvelope() {
 env.addEventListener("click", openEnvelope);
 env.addEventListener("keydown", (e) => (e.key === "Enter" || e.key === " ") && openEnvelope());
 
-/* ===== RSVP modal (placeholder — does not send anywhere yet) ===== */
+/* ===== RSVP modal — submission opens WhatsApp with the details prefilled ===== */
 const modal = $("modal");
 $("rsvpOpen").addEventListener("click", () => { modal.hidden = false; });
 $("rsvpClose").addEventListener("click", () => { modal.hidden = true; });
