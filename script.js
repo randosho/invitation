@@ -11,10 +11,11 @@ const CONFIG = {
     ["27 Nov", "Haldi"],
     ["29 Nov", "Shadi"],
   ],
-  // TODO: replace with real WhatsApp numbers — country code + number, no "+", spaces, or leading 0
+  // Substituted at deploy time from GitHub repo secrets — see .github/workflows/deploy.yml.
+  // Locally / if unsubstituted, these placeholders are harmless no-ops (wa.me just 404s).
   rsvpNumbers: {
-    bride: "911111111111",
-    groom: "912222222222",
+    bride: "__BRIDE_WA_NUMBER__",
+    groom: "__GROOM_WA_NUMBER__",
   },
 };
 

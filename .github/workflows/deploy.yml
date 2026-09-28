@@ -1,0 +1,55 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site with secrets injected
+        env:
+          BRIDE_WA_NUMBER: ${{ secrets.BRIDE_WA_NUMBER }}
+          GROOM_WA_NUMBER: ${{ secrets.GROOM_WA_NUMBER }}
+        run: |
+          set -euo pipefail
+          if [ -z "${BRIDE_WA_NUMBER:-}" ] || [ -z "${GROOM_WA_NUMBER:-}" ]; then
+            echo "::error::BRIDE_WA_NUMBER and/or GROOM_WA_NUMBER repo secrets are not set." \
+                 "Add them under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          mkdir -p _site
+          cp index.html styles.css art.js script.js _site/
+          cp -r assets _site/assets
+          sed -i "s/__BRIDE_WA_NUMBER__/${BRIDE_WA_NUMBER}/g" _site/script.js
+          sed -i "s/__GROOM_WA_NUMBER__/${GROOM_WA_NUMBER}/g" _site/script.js
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
