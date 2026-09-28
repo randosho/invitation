@@ -4,12 +4,12 @@ const CONFIG = {
   bride: "Shweta",
   dateText: "29.11.26",
   // Event start (local time of venue): year, month(1-12), day, hour, minute
-  eventDate: new Date(2026, 10, 29, 17, 0, 0),
+  eventDate: new Date(2026, 10, 29, 12, 30, 0),
   venue: "Mahalaxmi Garden",
   mapUrl: "https://maps.app.goo.gl/SEPe8payrhcvdNSR8?g_st=aw",
   schedule: [
-    ["27 Nov", "Haldi"],
-    ["29 Nov", "Shadi"],
+    ["27 Nov", "7:30 PM", "Haldi"],
+    ["29 Nov", "12:30 PM", "Shadi"],
   ],
   // Substituted at deploy time from GitHub repo secrets — see .github/workflows/deploy.yml.
   // Locally / if unsubstituted, these placeholders are harmless no-ops (wa.me just 404s).
@@ -28,7 +28,7 @@ $("dateText").textContent = CONFIG.dateText;
 $("venue").textContent = CONFIG.venue;
 $("mapBtn").href = CONFIG.mapUrl;
 $("timeline").innerHTML = CONFIG.schedule
-  .map(([t, e]) => `<li class="reveal"><span class="time">${t}</span><span class="ev">${e}</span></li>`)
+  .map(([d, t, e]) => `<li class="reveal"><span class="time"><b>${d}</b><small>${t}</small></span><span class="ev">${e}</span></li>`)
   .join("");
 
 /* ===== inject ornamental art ===== */
