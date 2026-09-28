@@ -216,7 +216,7 @@ form .btn{width:100%;margin-top:6px}
 @keyframes fade{from{opacity:0}}
 @keyframes up{from{transform:translateY(100%)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-.shloka{font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px;position:relative}
+.shloka{font-family:"Tiro Devanagari Hindi",serif;font-size:16px;letter-spacing:.06em;color:var(--gold);margin-bottom:14px;position:relative}
 .btn.reveal.in{transition:transform .25s ease,box-shadow .25s ease,opacity .25s}
 .btn.reveal.in:hover{transform:translateY(-3px) scale(1.05)}
 .btn.reveal.in:active{transform:translateY(-1px) scale(1.02)}
